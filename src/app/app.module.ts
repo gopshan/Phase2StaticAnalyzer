@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppComponent} from './app.component';
 import { StaticAnalyzerModule } from './staticAnalyzer/staticAnalyzer.module';
 import { from } from 'rxjs';
 import { CsComponent } from './chechStyleTool/cs.component';
@@ -14,6 +14,7 @@ import { CodeCsComponent } from './code-editor/code-cs/code-cs.component';
 import { CodePmdComponent } from './code-editor/code-pmd/code-pmd.component';
 import { CodeSimComponent } from './code-editor/code-sim/code-sim.component';
 import { CodeAllComponent } from './code-editor/code-all/code-all.component';
+import { CheckIfHomePageIsPassed } from './app.guard';
 
 
 
@@ -32,7 +33,7 @@ import { CodeAllComponent } from './code-editor/code-all/code-all.component';
     BrowserModule,
     AppRoutingModule, StaticAnalyzerModule, RouterModule
   ],
-  providers: [],
+  providers: [CheckIfHomePageIsPassed],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

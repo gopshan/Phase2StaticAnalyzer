@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Github } from './github';
 import { GithubService } from './github.service';
-import { Router } from '@angular/router';
+import { Router, CanActivate } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -16,10 +16,8 @@ export class GithubComponent implements OnInit {
   giturl: string;
   message: string;
 
-
   private _location: Location;
   public constructor(@Inject(Router) private router: Router) {
-
 
   }
 
@@ -42,6 +40,7 @@ export class GithubComponent implements OnInit {
   CheckStyleClick = function () {
     this.router.navigate(['/cs'], { state: { data: this.giturl } });
   }
+
   PmdClick = function () {
     this.router.navigate(['/pmd'], { state: { data: this.giturl } });
   }
@@ -53,3 +52,4 @@ export class GithubComponent implements OnInit {
   }
 
 }
+

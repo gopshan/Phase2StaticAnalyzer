@@ -11,6 +11,7 @@ import { GithubComponent } from './github.component';
 import { PmdComponent } from '../pmdTool/pmd.component';
 import { AppModule } from '../app.module';
 import { CsComponent } from '../chechStyleTool/cs.component';
+import { GithubService } from './github.service';
 
 
 
@@ -18,7 +19,7 @@ import { CsComponent } from '../chechStyleTool/cs.component';
 declarations:[PmdComponent,CsComponent],
 imports:[CommonModule,HttpClientModule,FormsModule,PmdModule],
 exports:[CsComponent],
-providers:[],
+providers:[GithubService],
 bootstrap: [GithubComponent,CsComponent]
 })
 
